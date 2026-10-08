@@ -47,8 +47,28 @@ int main()
         std::cout << "4: Quit\n";
         std::cout << "Enter option number: ";
 
+        std::string userInput;
+        std::getline(std::cin, userInput);
         int choiceNumber;
-        std::cin >> choiceNumber;
+
+        try
+        {
+            //convert input string to integer
+            std::size_t inputStringPosition;
+            choiceNumber = std::stoi(userInput, &inputStringPosition); //std::stoi(const string& str, std::size_t* pos =nullptr)
+            
+            if(inputStringPosition != userInput.length())
+            {
+                std::cout<<"Please only enter a number\n";
+                continue;
+            }
+        }
+        catch(const std::invalid_argument)
+        {
+            std::cout << "Please enter a number.\n";
+            continue;
+        }    
+        
         
         if(choiceNumber < 1 || choiceNumber > 4)
         {
