@@ -8,7 +8,8 @@
 void printTodoList(const TodoList& todoList)
 {
     const std::vector<Task>& tasklist = todoList.getTaskList();
-
+    
+    std::cout << "\n";
     std::cout << "----To Do List----\n";
 
     if(tasklist.empty())
@@ -30,6 +31,7 @@ void printTodoList(const TodoList& todoList)
 
         
     }
+    //std::cout << "\n";
 }
 
 int main()
@@ -38,6 +40,7 @@ int main()
 
     while(true)
     {
+        std::cout << "\n";
         std::cout << "1: Add a task\n";
         std::cout << "2: List current tasks\n";
         std::cout << "3: Mark a task completed\n";
@@ -49,7 +52,7 @@ int main()
         
         if(choiceNumber < 1 || choiceNumber > 4)
         {
-            std::cout << choiceNumber << " is not a valid option";
+            std::cout << choiceNumber << " is not a valid option\n";
             continue;
         }
 
@@ -85,7 +88,7 @@ int main()
                 if(taskNumber > 0)
                 {
                     todoList.finishTask(taskNumber - 1);
-                    std::cout << "task: " << taskNumber << " marked complete";
+                    std::cout << "task: " << taskNumber << " marked complete\n";
                 }
                 break;
             }
