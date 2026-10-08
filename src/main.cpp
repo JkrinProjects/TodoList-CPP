@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <print> //new print library
 //local imports
 #include "Todolist.h"
 
@@ -10,11 +9,11 @@ void printTodoList(const TodoList& todoList)
 {
     const std::vector<Task>& tasklist = todoList.getTaskList();
 
-    std::println("----To Do List----");
+    std::cout << "----To Do List----\n";
 
     if(tasklist.empty())
     {
-        std::println("no tasks added yet");
+        std::cout << "no tasks added yet";
         return;
     }
     for(std::size_t i = 0; i<tasklist.size(); ++i)
@@ -22,11 +21,11 @@ void printTodoList(const TodoList& todoList)
         const Task& task = tasklist[i];
         if(task.isFinished())
         {
-            std::println("{}: [x] {}", i+1, task.getTitle());
+            std::cout << i + 1 << ": [x] " << task.getTitle() << '\n';
         }
         else
         {
-            std::println("{}: [ ] {}", i+1, task.getTitle());            
+            std::cout << i + 1 << ": [ ] " << task.getTitle() << '\n';            
         }
 
         
@@ -39,18 +38,19 @@ int main()
 
     while(true)
     {
-        std::println("1: Add a task");
-        std::println("2: list current tasks");
-        std::println("3: mark a task completed");
-        std::println("4: quit");
-        std::println("Enter option number: ");
+        std::cout << "1: Add a task\n";
+        std::cout << "2: List current tasks\n";
+        std::cout << "3: Mark a task completed\n";
+        std::cout << "4: Quit\n";
+        std::cout << "Enter option number: ";
 
         int choiceNumber;
         std::cin >> choiceNumber;
         
         if(choiceNumber < 1 || choiceNumber > 4)
         {
-            std::println("{} is not a valid option", choiceNumber);
+            std::cout << choiceNumber << " is not a valid option";
+            continue;
         }
 
         
@@ -61,7 +61,7 @@ int main()
                 std::cin.get(); //clear new line from input buffer
                 
                 std::string title;
-                std::println("Enter title for new task: ");
+                std::cout << "Enter title for new task: ";
                 std::getline(std::cin, title);
                 if(!title.empty())
                 {
@@ -79,13 +79,13 @@ int main()
             {
                 std::size_t taskNumber;
 
-                std::println("Which task is completed? ");
+                std::cout << "Which task is completed? ";
                 std::cin>>taskNumber;
 
                 if(taskNumber > 0)
                 {
                     todoList.finishTask(taskNumber - 1);
-                    std::println("task {} marked complete", taskNumber);
+                    std::cout << "task: " << taskNumber << " marked complete";
                 }
                 break;
             }
