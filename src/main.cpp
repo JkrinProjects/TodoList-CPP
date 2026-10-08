@@ -41,10 +41,12 @@ int main()
     while(true)
     {
         std::cout << "\n";
+        std::cout << "------------\n";
         std::cout << "1: Add a task\n";
         std::cout << "2: List current tasks\n";
         std::cout << "3: Mark a task completed\n";
         std::cout << "4: Quit\n";
+        std::cout << "------------\n";
         std::cout << "Enter option number: ";
 
         std::string userInput;
@@ -65,7 +67,7 @@ int main()
         }
         catch(const std::invalid_argument)
         {
-            std::cout << "Please enter a number.\n";
+            std::cout << "Please enter a number\n";
             continue;
         }    
         
@@ -81,7 +83,7 @@ int main()
         {
             case 1: //add task
             {    
-                std::cin.get(); //clear new line from input buffer
+                //std::cin.get(); //clear new line from input buffer
                 
                 std::string title;
                 std::cout << "Enter title for new task: ";
