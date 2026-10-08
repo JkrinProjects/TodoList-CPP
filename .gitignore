@@ -4,3 +4,10 @@
 *.o
 *.obj
 
+#debugging / configuration
+*.pdb
+.vscode/
+
+#misc
+selfnotes.txt
+
