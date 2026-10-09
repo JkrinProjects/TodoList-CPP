@@ -22,3 +22,8 @@ void Task::markFinished()
     m_finished = true;
 }
 
+bool Task::toggleFinished()
+{
+    m_finished = !m_finished;
+}
+

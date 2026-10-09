@@ -13,4 +13,3 @@ int main()
     
 }
 
-//future changes: define an enum class for switch cases

@@ -16,10 +16,12 @@ class Task
         
         //setters
         void markFinished();
-        
+        bool toggleFinished();
+
         //getters
         const std::string& getTitle() const;
         bool isFinished() const;
+        
 };
 
 
