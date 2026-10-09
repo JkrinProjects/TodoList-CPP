@@ -14,8 +14,17 @@ void TodoList::finishTask(std::size_t index)
     {
         throw std::out_of_range("Task index is out of range");
     }
-    m_tasklist[index].markFinished();
+    //m_tasklist[index].markFinished();
+    m_tasklist[index].toggleFinished();
 
+}
+void TodoList::toggleFinishedStatus(std::size_t index)
+{
+    if(index >= m_tasklist.size())
+    {
+        throw std::out_of_range("Task index is out of range");
+    }
+    m_tasklist[index].toggleFinished();
 }
 //returns a vector of Task objects
 const std::vector<Task>& TodoList::getTaskList() const
