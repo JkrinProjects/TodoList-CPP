@@ -1,5 +1,6 @@
 #include <string>
 #include <stdexcept>
+#include <vector>
 
 #include "TodoListController.h"
 
@@ -10,7 +11,7 @@ TodoListController::TodoListController(TodoList& todolist)
 
 }
 
-void TodoListController::addTask(std::string& title) const
+void TodoListController::addTask(const std::string& title) const
 {
     if(title.empty())
     {
@@ -19,8 +20,8 @@ void TodoListController::addTask(std::string& title) const
     m_todoList.addTask(title);
 }
 
-//calls TodoList::toggleFinishedStatus() which calls Task::toggleFinished()  
-void TodoListController::toggleFinishedStatus(std::size_t& index) const
+//delegates to TodoList::toggleFinishedStatus() to validate index and toggle state
+void TodoListController::toggleFinishedStatus(std::size_t index) const
 {
     m_todoList.toggleFinishedStatus(index);
 }
