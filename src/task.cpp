@@ -7,23 +7,21 @@ Task::Task(const std::string& title):
 { 
 }
 
-const std::string& Task::getTitle() const
+void Task::toggleFinished()
 {
-    return m_title;
+    m_finished = !m_finished;
 }
-
-bool Task::isFinished() const
-{
-    return m_finished;
-}
-
 void Task::markFinished()
 {
     m_finished = true;
 }
 
-bool Task::toggleFinished()
+const std::string& Task::getTitle() const
 {
-    m_finished = !m_finished;
+    return m_title;
+}
+bool Task::isFinished() const
+{
+    return m_finished;
 }
 

@@ -16,7 +16,7 @@ class Task
         
         //setters
         void markFinished();
-        bool toggleFinished();
+        void toggleFinished();
 
         //getters
         const std::string& getTitle() const;
