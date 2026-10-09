@@ -4,6 +4,7 @@
 
 #include <vector>
 #include <cstddef>
+#include <string>
 
 #include "Task.h"
 
@@ -18,4 +19,5 @@ class TodoList
         
         //getters
         const std::vector<Task>& getTaskList() const;
+        const std::size_t getTaskCount() const;
 };

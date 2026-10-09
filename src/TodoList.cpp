@@ -22,3 +22,7 @@ const std::vector<Task>& TodoList::getTaskList() const
 {
     return m_tasklist;
 }
+const std::size_t TodoList::getTaskCount() const
+{
+    return m_tasklist.size();
+}
