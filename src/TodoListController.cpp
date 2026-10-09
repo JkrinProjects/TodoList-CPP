@@ -13,10 +13,6 @@ TodoListController::TodoListController(TodoList& todolist)
 
 void TodoListController::addTask(const std::string& title) const
 {
-    if(title.empty())
-    {
-        throw std::invalid_argument("title can not be empty");
-    }
     m_todoList.addTask(title);
 }
 
