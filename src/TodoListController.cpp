@@ -1,3 +1,5 @@
+//manages the Todolist class so that Todolist only has to 
+
 #include <string>
 #include <stdexcept>
 #include <vector>
@@ -10,7 +12,6 @@ TodoListController::TodoListController(TodoList& todolist)
 {
 
 }
-
 void TodoListController::addTask(const std::string& title) const
 {
     m_todoList.addTask(title);
