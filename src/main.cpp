@@ -1,14 +1,17 @@
+#include "Task.h"
 #include "Todolist.h"
-#include "TodoListManager.h"
+#include "TodoListController.h"
+#include "TodoListUI.h"
 
 //use console as UI for now
 
 int main()
 {
     TodoList todoList;
-    TodoListManager listManager;
+    TodoListController listController(todoList);
+    TodoListUI ui(listController);
 
-    listManager.run(todoList);
+    ui.run();
     return 0;
     
 }
