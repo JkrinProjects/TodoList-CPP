@@ -51,7 +51,7 @@ void TodoListUI::printTodoList() const
 
     for(std::size_t i = 0; i<taskCount; ++i)
     {
-        const Task& task = m_controller.getTask(i);
+        const Task& task = m_controller.getTaskAtIndex(i);
         if(task.isFinished())
         {
             std::cout << i + 1 << ": [x] " << task.getTitle() << '\n';
