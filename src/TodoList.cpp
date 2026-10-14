@@ -41,6 +41,10 @@ const std::vector<Task>& TodoList::getTaskList() const
 {
     return m_tasklist;
 }
+const Task& TodoList::getTaskAtIndex(std::size_t index) const
+{
+    return m_tasklist.at(index);
+}
 const std::size_t TodoList::getTaskCount() const
 {
     return m_tasklist.size();
