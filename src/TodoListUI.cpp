@@ -149,6 +149,23 @@ void TodoListUI::finishTask()
     std::cout<<"Task "<<taskNumber<< " is complete\n";
 }
 
+void TodoListUI::deleteTask()
+{
+    const std::size_t numberOfTasks = m_controller.getTaskCount();
+    int rangeStart = 1;
+    int rangeEnd = static_cast<int>(numberOfTasks);
+    
+    if(numberOfTasks == 0)
+    {
+        std::cout<<"The list has no tasks \n";
+        return;
+    }
+
+    const int taskNumber = getIntegerInputInRange("Which task is done? ",rangeStart, rangeEnd);
+    m_controller.deleteTask(static_cast<std::size_t>(taskNumber-1));
+
+}
+
 //helpers
 int TodoListUI::convertToInteger(const std::string& input) const
 {

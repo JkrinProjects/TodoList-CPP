@@ -24,6 +24,7 @@ class TodoListUI
         void addTask();
         void finishTask();
         void toggleFinishedStatus();
+        void deleteTask();
 
         //helpers
         int convertToInteger(const std::string& input) const;

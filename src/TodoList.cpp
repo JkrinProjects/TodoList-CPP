@@ -26,7 +26,17 @@ void TodoList::finishTask(std::size_t index)
 
 }
 
-//returns a vector of Task objects
+void TodoList::deleteTask(std::size_t index)
+{
+    if(index >= m_tasklist.size())
+    {
+        throw std::out_of_range("Task index is out of range");
+    }
+    m_tasklist.erase(m_tasklist.begin() + index);
+}
+
+
+//getters
 const std::vector<Task>& TodoList::getTaskList() const
 {
     return m_tasklist;

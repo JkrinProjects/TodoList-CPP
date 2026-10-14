@@ -17,6 +17,7 @@ class TodoList
         void addTask(const std::string& title);
         void toggleFinishedStatus(std::size_t index);
         void finishTask(std::size_t index);
+        void deleteTask(std::size_t index);
 
         //getters
         const std::vector<Task>& getTaskList() const;

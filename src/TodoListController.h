@@ -11,6 +11,8 @@ class TodoListController
         //list methods
         void addTask(const std::string& title) const;
         void toggleFinishedStatus(std::size_t index) const;
+        void markFinished(std::size_t index) const;
+        void deleteTask(std::size_t index) const;
 
         //getters
         std::size_t getTaskCount() const;
