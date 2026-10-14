@@ -16,7 +16,8 @@ class TodoListController
 
         //getters
         std::size_t getTaskCount() const;
-        const Task& getTask(std::size_t index) const;
+        const std::vector<Task>& getFullTaskList() const;
+        const Task& getTaskAtIndex(std::size_t index) const;
         
         
         //const TodoList& getTodoList() const;

@@ -38,22 +38,28 @@ void TodoListController::deleteTask(std::size_t index) const
     m_todoList.deleteTask(index);
 }
 
+//getters
 std::size_t TodoListController::getTaskCount() const
 {
     return m_todoList.getTaskCount();
 
 }
 
-const Task& TodoListController::getTask(std::size_t index) const
+const Task& TodoListController::getTaskAtIndex(std::size_t index) const
+{
+    return m_todoList.getTaskAtIndex(index);
+}
+
+/*const std::vector<Task>& TodoListController::getFullTaskList() const
 {
     const std::vector<Task>& tasks = m_todoList.getTaskList();
 
-    if (index >= tasks.size())
+    if (tasks.size() == 0)
     {
-        throw std::out_of_range("There are not that many tasks");
+        throw std::out_of_range("There are no current tasks");
     }
-    return tasks[index];
-}
+    return tasks;
+}*/
 
 
 
