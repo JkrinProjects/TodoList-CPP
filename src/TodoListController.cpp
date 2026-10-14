@@ -1,4 +1,4 @@
-//manages the Todolist class so that Todolist only has to 
+//manages the Todolist class. Overkill for console but should be useful when UI is built
 
 #include <string>
 #include <stdexcept>
@@ -24,11 +24,6 @@ void TodoListController::toggleFinishedStatus(std::size_t index) const
 }
 
 void TodoListController::markFinished(std::size_t index) const
-{
-    m_todoList.finishTask(index);
-}
-
-void TodoListController::toggleFinishedStatus(std::size_t index) const
 {
     m_todoList.finishTask(index);
 }
