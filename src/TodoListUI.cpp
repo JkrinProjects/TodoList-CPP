@@ -132,7 +132,7 @@ void TodoListUI::addTask()
 void TodoListUI::finishTask()
 {
     //perhaps edit helper functions to avoid casting
-    const std::size_t numberOfTasks = m_controller.getTodoList().getTaskCount();
+    const std::size_t numberOfTasks = m_controller.getTaskCount();
     int rangeStart = 1;
     int rangeEnd = static_cast<int>(numberOfTasks);
 
