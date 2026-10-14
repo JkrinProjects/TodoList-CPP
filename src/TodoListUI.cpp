@@ -39,19 +39,19 @@ void TodoListUI::run()
 //display functions
 void TodoListUI::printTodoList() const
 {
-    const std::vector<Task>& tasklist = m_controller.getTodoList().getTaskList();
-
+    const std::size_t taskCount = m_controller.getTaskCount();
     
-    if(tasklist.empty())
+    if(taskCount==0)
     {
         std::cout << "no tasks added yet\n";
         return;
     }
 
     std::cout << "\n----To Do List----\n";
-    for(std::size_t i = 0; i<tasklist.size(); ++i)
+
+    for(std::size_t i = 0; i<taskCount; ++i)
     {
-        const Task& task = tasklist[i];
+        const Task& task = m_controller.getTask(i);
         if(task.isFinished())
         {
             std::cout << i + 1 << ": [x] " << task.getTitle() << '\n';

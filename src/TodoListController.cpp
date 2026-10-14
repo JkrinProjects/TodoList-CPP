@@ -23,7 +23,21 @@ void TodoListController::toggleFinishedStatus(std::size_t index) const
     m_todoList.toggleFinishedStatus(index);
 }
 
-const TodoList& TodoListController::getTodoList() const
+std::size_t TodoListController::getTaskCount() const
 {
-    return m_todoList;
+    return m_todoList.getTaskCount();
+
 }
+
+const Task& TodoListController::getTask(std::size_t index) const
+{
+    const std::vector<Task>& tasks = m_todoList.getTaskList();
+
+    if (index >= tasks.size())
+    {
+        throw std::out_of_range("There are not that many tasks");
+    }
+}
+
+
+

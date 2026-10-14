@@ -13,7 +13,11 @@ class TodoListController
         void toggleFinishedStatus(std::size_t index) const;
 
         //getters
-        const TodoList& getTodoList() const;
+        std::size_t getTaskCount() const;
+        const Task& getTask(std::size_t index) const;
+        
+        
+        //const TodoList& getTodoList() const;
 
     private:
         TodoList& m_todoList;
