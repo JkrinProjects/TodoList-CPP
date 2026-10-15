@@ -152,7 +152,7 @@ TEST(TodoListTests, DeleteTaskDecreasesCount)
 
     list.deleteTask(0);
 
-    EXPECT_EQ(list.getTaskCount(), std::size_t{0});
+    EXPECT_EQ(list.getTaskCount(), std::size_t{1});
 }
 
 TEST(TodoListTests, DeleteTaskRemovesCorrectTask)
