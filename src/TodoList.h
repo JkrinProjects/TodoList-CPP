@@ -21,6 +21,6 @@ class TodoList
 
         //getters
         const std::vector<Task>& getTaskList() const;
-        const Task& TodoList::getTaskAtIndex(std::size_t index) const;
+        const Task& getTaskAtIndex(std::size_t index) const;
         const std::size_t getTaskCount() const;
 };
