@@ -11,6 +11,23 @@ Task::Task(const std::string& title):
     {
         throw std::invalid_argument("Task title cannot be empty");
     }
+    
+    //check to validate title is not whitespace "\n, \t, ' ', etc"
+    bool titleIsOnlyWhitespace = true;
+
+    //search for non whitespace char
+    for (char c : title)
+    {
+        if(!std::isspace(static_cast<unsigned char>(c)))
+        {
+            titleIsOnlyWhitespace = false;
+            break;
+        }
+    }
+    if(titleIsOnlyWhitespace)
+    {
+        throw std::invalid_argument("Task Title cannot be empty(only whitespace)");
+    }
 }
 
 void Task::toggleFinished()
